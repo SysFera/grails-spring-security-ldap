@@ -9,8 +9,11 @@ grails.project.dependency.resolution = {
 
 	repositories {
 		mavenLocal()
-		grailsCentral()
-		mavenCentral()
+		grails.project.repos.default = "nexus"
+		grails.project.repos.nexus.url = "http://sysfera-nexus:8081/nexus/content/repositories/snapshots/"
+		grails.project.repos.nexus.type = "maven"
+		grails.project.repos.nexus.username = System.getenv("SYSFERA_NEXUS_USERNAME")
+		grails.project.repos.nexus.password = System.getenv("SYSFERA_NEXUS_PASSWORD")
 	}
 
 	dependencies {
